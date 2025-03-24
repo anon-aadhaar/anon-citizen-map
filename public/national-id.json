@@ -20,6 +20,69 @@
         "algorithm": "RSA/ECDSA (varies by state and application)",
         "flag": "https://flagcdn.com/w320/us.png"
     },
+    "Indonesia": {
+        "population": "279 million",
+        "worldPercentage": "3.5%",
+        "system": "e-KTP (Electronic ID Card)",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/id.png"
+    },
+    "Pakistan": {
+        "population": "249 million",
+        "worldPercentage": "3.1%",
+        "system": "Smart National ID Card (SNIC)",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/pk.png"
+    },
+    "Nigeria": {
+        "population": "225 million",
+        "worldPercentage": "2.8%",
+        "system": "National e-ID Card",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/ng.png"
+    },
+    "Brazil": {
+        "population": "217 million",
+        "worldPercentage": "2.7%",
+        "system": "CPF (Cadastro de Pessoas Físicas)",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/br.png"
+    },
+    "Bangladesh": {
+        "population": "173 million",
+        "worldPercentage": "2.1%",
+        "system": "National Identity Card",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/bd.png"
+    },
+    "Russia": {
+        "population": "146 million",
+        "worldPercentage": "1.8%",
+        "system": "Internal Passport",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/ru.png"
+    },
+    "Mexico": {
+        "population": "130 million",
+        "worldPercentage": "1.6%",
+        "system": "CURP (Clave Única de Registro de Población)",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/mx.png"
+    },
+    "Japan": {
+        "population": "123 million",
+        "worldPercentage": "1.5%",
+        "system": "My Number Card",
+        "algorithm": "RSA/ECDSA",
+        "flag": "https://flagcdn.com/w320/jp.png"
+    },
+    "Turkey": {
+        "population": "88 million",
+        "worldPercentage": "1.1%",
+        "system": "Turkish Electronic ID Card",
+        "algorithm": "RSA",
+        "flag": "https://flagcdn.com/w320/tr.png"
+    },
     "Germany": {
         "population": "83 million",
         "worldPercentage": "1.0%",
@@ -27,11 +90,158 @@
         "algorithm": "RSA/ECDSA",
         "flag": "https://flagcdn.com/w320/de.png"
     },
+    "United Arab Emirates": {
+        "population": "10 million",
+        "worldPercentage": "0.13%",
+        "system": "Emirates ID",
+        "algorithm": "RSA, ECDSA",
+        "flag": "https://flagcdn.com/w320/ae.png"
+    },
+    "Sweden": {
+        "population": "10 million",
+        "worldPercentage": "0.13%",
+        "system": "BankID",
+        "algorithm": "RSA, ECDSA",
+        "flag": "https://flagcdn.com/w320/se.png"
+    },
+    "Switzerland": {
+        "population": "8.7 million",
+        "worldPercentage": "0.11%",
+        "system": "SwissID",
+        "algorithm": "RSA, ECDSA",
+        "flag": "https://flagcdn.com/w320/ch.png"
+    },
+    "Norway": {
+        "population": "5.5 million",
+        "worldPercentage": "0.07%",
+        "system": "BankID",
+        "algorithm": "RSA, ECDSA",
+        "flag": "https://flagcdn.com/w320/no.png"
+    },
+    "Ethiopia": {
+        "population": "127 million",
+        "worldPercentage": "1.6%",
+        "system": "National ID Program",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/et.png"
+    },
+    "Philippines": {
+        "population": "117 million",
+        "worldPercentage": "1.5%",
+        "system": "PhilSys (Philippine Identification System)",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/ph.png"
+    },
+    "Egypt": {
+        "population": "112 million",
+        "worldPercentage": "1.4%",
+        "system": "National ID Card",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/eg.png"
+    },
+    "Thailand": {
+        "population": "71 million",
+        "worldPercentage": "0.9%",
+        "system": "Thai National ID Card",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/th.png"
+    },
+    "DR Congo": {
+        "population": "107 million",
+        "worldPercentage": "1.3%",
+        "system": "National Identification and Vital Statistics Agency",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/cd.png"
+    },
+    "Vietnam": {
+        "population": "98 million",
+        "worldPercentage": "1.2%",
+        "system": "Citizen Identification Card",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/vn.png"
+    },
+    "Iran": {
+        "population": "87 million",
+        "worldPercentage": "1.1%",
+        "system": "National Smart Card",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/ir.png"
+    },
     "Estonia": {
         "population": "1.3 million",
         "worldPercentage": "0.02%",
         "system": "e-Identity Card",
         "algorithm": "RSA (2048-bit)",
         "flag": "https://flagcdn.com/w320/ee.png"
+    },
+    "Finland": {
+        "population": "5.5 million",
+        "worldPercentage": "0.07%",
+        "system": "Electronic ID Card",
+        "algorithm": "RSA (2048-bit)",
+        "flag": "https://flagcdn.com/w320/fi.png"
+    },
+    "Austria": {
+        "population": "9 million",
+        "worldPercentage": "0.11%",
+        "system": "Handy-Signatur / Bürgerkarte",
+        "algorithm": "RSA",
+        "flag": "https://flagcdn.com/w320/at.png"
+    },
+    "Belgium": {
+        "population": "11.7 million",
+        "worldPercentage": "0.15%",
+        "system": "Belgian eID",
+        "algorithm": "RSA",
+        "flag": "https://flagcdn.com/w320/be.png"
+    },
+    "Spain": {
+        "population": "47 million",
+        "worldPercentage": "0.6%",
+        "system": "DNI electrónico (DNIe)",
+        "algorithm": "RSA (2048-bit)",
+        "flag": "https://flagcdn.com/w320/es.png"
+    },
+    "Portugal": {
+        "population": "10 million",
+        "worldPercentage": "0.13%",
+        "system": "Cartão de Cidadão",
+        "algorithm": "RSA (2048-bit), ECC",
+        "flag": "https://flagcdn.com/w320/pt.png"
+    },
+    "Netherlands": {
+        "population": "17 million",
+        "worldPercentage": "0.21%",
+        "system": "DigiD (Digital Identity)",
+        "algorithm": "RSA/ECDSA",
+        "flag": "https://flagcdn.com/w320/nl.png"
+    },
+    "Italy": {
+        "population": "60 million",
+        "worldPercentage": "0.75%",
+        "system": "Carta d'Identità Elettronica (CIE)",
+        "algorithm": "RSA/ECDSA",
+        "flag": "https://flagcdn.com/w320/it.png"
+    },
+    "Malaysia": {
+        "population": "34 million",
+        "worldPercentage": "0.43%",
+        "system": "MyKad",
+        "algorithm": "Not publicly specified",
+        "flag": "https://flagcdn.com/w320/my.png"
+    },
+    "Denmark": {
+        "population": "5.8 million",
+        "worldPercentage": "0.07%",
+        "system": "NemID/MitID",
+        "algorithm": "RSA, ECDSA",
+        "flag": "https://flagcdn.com/w320/dk.png"
+    },
+    "Singapore": {
+        "population": "5.9 million",
+        "worldPercentage": "0.07%",
+        "system": "SingPass",
+        "algorithm": "RSA/ECDSA",
+        "flag": "https://flagcdn.com/w320/sg.png"
     }
 }
