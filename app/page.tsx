@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { Grid, Tooltip } from "@mui/material";
 import {
   ComposableMap,
   Geographies,
@@ -7,40 +8,39 @@ import {
   Graticule,
   Sphere,
 } from "react-simple-maps";
-import Tooltip from "@mui/material/Tooltip";
-import Zoom from "@mui/material/Zoom";
+import { COLORS, CountryDetails } from "./utils/constants";
 
 const geoUrl = "countries-110m.json";
 
-const COLORS = {
-  DEFAULT: "#cccccc",
-  HOVER: "#4d7332",
-  PRESSED: "#507f3a",
-};
+const getColorByPopulation = (population: string | undefined): string => {
+  if (!population) return COLORS.DEFAULT;
 
-interface CountryDetails {
-  population: number;
-  worldPercentage: string;
-  system: string;
-  algorithm: string;
-  flag: string;
-}
+  let populationNum = parseFloat(population.replace(/[^0-9.]/g, ""));
+
+  if (population.includes("billion")) populationNum *= 1000;
+
+  if (populationNum >= 1000) return COLORS.DARK_GREEN;
+  if (populationNum >= 200) return COLORS.MEDIUM_GREEN;
+  if (populationNum >= 50) return COLORS.LIGHT_GREEN;
+  return COLORS.NO_CERT;
+};
 
 export default function Home() {
   const [countryData, setCountryData] = useState<
     Record<string, CountryDetails>
   >({});
-  const [clientRendered, setClientRendered] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  // const [selectedCountry, setSelectedCountry] = useState("");
 
   useEffect(() => {
-    setClientRendered(true);
+    setIsClient(true);
     fetch("/national-id.json")
       .then((response) => response.json())
       .then((data) => setCountryData(data))
       .catch((error) => console.error("Error fetching country data:", error));
   }, []);
 
-  if (!clientRendered) return null;
+  if (!isClient) return null;
 
   return (
     <div className="fixed inset-0 overflow-hidden flex items-center justify-center bg-gray-100">
@@ -56,7 +56,12 @@ export default function Home() {
           id="sphereline"
           fill="#ffffff00"
         />
-        <Geographies geography={geoUrl}>
+        <Geographies
+          fill="#e1e1e1"
+          stroke="#fff"
+          strokeWidth={0.3}
+          geography={geoUrl}
+        >
           {({ geographies }) =>
             geographies.map((geo) => {
               const countryName = geo.properties.name;
@@ -84,14 +89,14 @@ export default function Home() {
                     )
                   }
                   arrow
-                  TransitionComponent={Zoom}
                 >
                   <Geography
                     geography={geo}
                     className="cursor-pointer"
+                    // onClick={() => setSelectedCountry(countryName)}
                     style={{
                       default: {
-                        fill: countryDetails ? "#70ac48" : COLORS.DEFAULT,
+                        fill: getColorByPopulation(countryDetails?.population),
                         outline: "none",
                       },
                       hover: { fill: COLORS.HOVER },
@@ -104,6 +109,59 @@ export default function Home() {
           }
         </Geographies>
       </ComposableMap>
+
+      <Grid
+        container
+        spacing={1}
+        className="absolute bottom-2 left-1  bg-opacity-60 p-4 max-w-sm"
+      >
+        <Grid item xs={12}>
+          <h2 className="text-lg font-semibold text-black">Country Coverage</h2>
+        </Grid>
+        <Grid item xs={12}>
+          <div className="flex items-center">
+            <div
+              className="w-8 h-4 mr-2"
+              style={{ backgroundColor: COLORS.DARK_GREEN }}
+            ></div>
+            <span className="text-sm text-black">
+              Very High Population (1B+)
+            </span>
+          </div>
+          <div className="flex items-center mt-2">
+            <div
+              className="w-8 h-4 mr-2"
+              style={{ backgroundColor: COLORS.MEDIUM_GREEN }}
+            ></div>
+            <span className="text-sm text-black">High Population (200M+)</span>
+          </div>
+          <div className="flex items-center mt-2">
+            <div
+              className="w-8 h-4 mr-2"
+              style={{ backgroundColor: COLORS.LIGHT_GREEN }}
+            ></div>
+            <span className="text-sm text-black">
+              Moderate Population (50M+)
+            </span>
+          </div>
+          <div className="flex items-center mt-2">
+            <div
+              className="w-8 h-4 mr-2"
+              style={{ backgroundColor: COLORS.NO_CERT }}
+            ></div>
+            <span className="text-sm text-black">
+              Issuing but No Certificates
+            </span>
+          </div>
+          <div className="flex items-center mt-2">
+            <div
+              className="w-8 h-4 mr-2"
+              style={{ backgroundColor: COLORS.DEFAULT }}
+            ></div>
+            <span className="text-sm text-black">No Issuance</span>
+          </div>
+        </Grid>
+      </Grid>
     </div>
   );
 }
