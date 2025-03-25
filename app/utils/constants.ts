@@ -13,4 +13,5 @@ export const COLORS = {
   NO_CERT: "#FFCA28", // Yellow for "Issuing but no certificates"
   HOVER: "#4d7332",
   PRESSED: "#507f3a",
+  YELLOW: "#FFCA28",
 };
