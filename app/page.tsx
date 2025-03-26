@@ -9,7 +9,6 @@ import {
   Sphere,
 } from "react-simple-maps";
 import { COLORS, CountryDetails } from "./utils/constants";
-import Image from "next/image";
 
 const geoUrl = "countries-110m.json";
 
@@ -96,7 +95,7 @@ export default function Home() {
       {currentCountry && (
         <div className="absolute bottom-10 right-10 bg-white shadow-lg rounded-md p-3 text-sm text-gray-700">
           {currentCountry.flag && (
-            <Image
+            <img
               alt="Country flag"
               src={currentCountry.flag}
               className="w-10 h-6 mb-2 rounded-sm"
