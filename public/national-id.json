@@ -262,7 +262,7 @@
         "population": "45 million",
         "worldPercentage": "0.56%",
         "system": "Documento Nacional de Identidad (DNI)",
-        "algorithm": "Not publicly specified",
+        "algorithm": "RSA with SHA-256",
         "flag": "https://flagcdn.com/w320/ar.png"
     },
     "Poland": {
