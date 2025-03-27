@@ -1,7 +1,7 @@
 ---
 name: Add New Country Digital ID Info
 about: Submit information about a country's digital ID system
-title: ''
+title: Add New Country Digital ID info
 labels: ''
 assignees: 0xVikasRushi
 
