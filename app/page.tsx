@@ -178,7 +178,7 @@ export default function Home() {
         complete or verified. If you have updated information or corrections
         about digital ID algorithms in your country, please consider{" "}
         <a
-          href="https://github.com/anon-aadhaar/anon-citizen-map/issues"
+          href="https://github.com/anon-aadhaar/anon-citizen-map/issues/new?template=add-new-country-digital-id-info.md"
           target="_blank"
           className="underline text-blue-600"
         >
