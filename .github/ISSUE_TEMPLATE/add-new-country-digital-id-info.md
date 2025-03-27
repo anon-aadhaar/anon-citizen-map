@@ -7,13 +7,18 @@ assignees: 0xVikasRushi
 
 ---
 
-### 🏷 Country Name
+###  Country Name
 <!-- Enter the country's name -->
+[ ]
+
+### Digital ID Name  
+<!-- Enter the country's digital ID card/system name -->  
 [ ]
 
 ### 🔐 Signature Algorithm
 <!-- e.g., RSA, ECC, Ed25519, or "Not Publicly Specified" -->
 [ ]
+
 
 ### 📄 Reference / Public Source
 <!-- Link to an article, official site, or documentation -->
