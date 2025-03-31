@@ -35,9 +35,10 @@ export default function Home() {
   const [countryData, setCountryData] = useState<
     Record<string, CountryDetails>
   >({});
-  const [currentCountry, setCurrentCountry] = useState<CountryDetails | null>(
-    null
-  );
+  const [currentCountry, setCurrentCountry] = useState<{
+    name: string;
+    details?: CountryDetails;
+  } | null>(null);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -75,7 +76,12 @@ export default function Home() {
                   key={geo.rsmKey}
                   geography={geo}
                   className="cursor-pointer"
-                  onMouseEnter={() => setCurrentCountry(countryDetails || null)}
+                  onMouseEnter={() =>
+                    setCurrentCountry({
+                      name: countryName,
+                      details: countryDetails,
+                    })
+                  }
                   onMouseLeave={() => setCurrentCountry(null)}
                   style={{
                     default: {
@@ -93,22 +99,31 @@ export default function Home() {
       </ComposableMap>
 
       {currentCountry && (
-        <div className="absolute bottom-10 right-10 bg-white shadow-lg rounded-md p-3 text-sm text-gray-700">
-          {currentCountry.flag && (
+        <div className="absolute bottom-10 right-10 bg-gray-200 shadow-lg rounded-md p-3 text-sm text-gray-700 border border-gray-200">
+          {currentCountry.details?.flag && (
             <img
-              alt="Country flag"
-              src={currentCountry.flag}
+              alt={`${currentCountry.name} flag`}
+              src={currentCountry.details.flag}
               className="w-10 h-6 mb-2 rounded-sm"
             />
           )}
-          <div>
-            <strong>{currentCountry.system}</strong>
+          <div className="text-base font-semibold mb-1">
+            {currentCountry.name}
           </div>
-          <div>Population: {currentCountry.population}</div>
-          <div>World Share: {currentCountry.worldPercentage}</div>
-          <div>
-            <strong>Algorithm:</strong> {currentCountry.algorithm}
-          </div>
+          {currentCountry.details ? (
+            <>
+              <div>
+                <strong>{currentCountry.details.system}</strong>
+              </div>
+              <div>Population: {currentCountry.details.population}</div>
+              <div>World Share: {currentCountry.details.worldPercentage}</div>
+              <div>
+                <strong>Algorithm:</strong> {currentCountry.details.algorithm}
+              </div>
+            </>
+          ) : (
+            <div className="italic text-gray-500">Digital ID not issued </div>
+          )}
         </div>
       )}
 
